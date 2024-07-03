@@ -33,5 +33,14 @@
 -- fetch all the employees who have more than 60000 salary or department is HR
 -- SELECT * FROM employees WHERE salary>=60000 OR dept='HR';
 
+-- fetch all the employees who have any department other than HR 
+-- SELECT * FROM employees WHERE dept!='HR';
+
+-- fetch all the employees from IT and HR department
+-- SELECT * FROM employees WHERE dept='HR' OR dept='IT';
+
+
+
+
 
 
