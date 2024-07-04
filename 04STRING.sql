@@ -74,6 +74,14 @@ STRING_AGG
 -- SELECT RIGHT('Hello World', 5);
 
 
+-- TRIM -- Remove spaces from start and/or end
+-- SELECT LENGTH(TRIM('     Saman     '));
+
+-- POSITION --  to find the index of a word or a substring in a string
+-- SELECT POSITION('Sandhu' IN 'Saman Sandhu');
+
+-- fetch all the email domains in employees
+-- SELECT RIGHT(email, LENGTH(email)-POSITION('@' IN email)) FROM employees;
 
 
 
