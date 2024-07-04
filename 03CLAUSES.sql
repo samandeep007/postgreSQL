@@ -66,4 +66,74 @@
 -- fetch all the distinct departments in bank (no repetition --> No duplicates);
 -- SELECT DISTINCT dept FROM employees;
 
+-- ORDER BY --> Alphabetical Sorting
+-- SELECT * FROM employees ORDER BY fname;
 
+--- order all the employees by department in descending order
+-- SELECT * FROM employees ORDER BY dept DESC;
+
+--- order all the employees by salary in ascending order
+-- SELECT * FROM employees ORDER BY salary ASC;
+
+
+
+-- LIMIT --> Rate limiting the fetched data
+
+-- Fetch only top 3 employees by salary
+-- SELECT * FROM employees ORDER BY salary DESC LIMIT 3;
+
+
+--LIKE --> To find pattern LIKE %R%
+
+-- fetch all the users whose name start with A
+-- SELECT * FROM employees WHERE fname LIKE 'A%'; -- It means the name must start with A, it can have as many characters 
+
+-- fetch all the users whose last name has 'ta' in it
+-- SELECT * FROM employees WHERE lname LIKE '%ta%';
+
+-- fetch all the users whose name end with a --> It is case sensitive -- Remember
+-- SELECT * FROM employees WHERE fname LIKE '%a';
+
+-- fetch all the users whose first name has 'i' in it
+-- SELECT * FROM employees WHERE fname LIKE '%i%';
+
+-- fetch all the departments that have only two letters in them
+-- SELECT DISTINCT dept FROM employees WHERE dept LIKE '__';
+
+-- fetch all the employees who have 5 letters in their fname
+-- SELECT fname FROM employees WHERE fname LIKE '_____';
+
+-- fetch all the employees who have a as the second letter in their fname;
+-- SELECT * FROM employees WHERE fname LIKE '_a%';
+
+
+-- AGGREGATE FUNCTIONS - COUNT, SUM, MIN, MAX, AVG
+
+-- COUNT 
+
+-- fetch total number of employees --> Use PK if possible
+-- SELECT COUNT(emp_id) AS totalEmployees FROM employees;
+
+
+-- SUM 
+
+-- fetch total amount going out as salary to employees
+-- SELECT SUM(salary) FROM employees;
+
+-- fetch average amount going out as salary to employees
+-- SELECT AVG(salary) FROM employees;
+
+-- fetch minimum amount going out as salary to employees
+-- SELECT MIN(salary) FROM employees;
+
+-- fetch maximum amount going out as salary to employees
+-- SELECT MAX(salary) FROM employees;
+
+
+-- GROUP BY -- IMPORTANT --> does the distinct thing for you automatically under the hood
+
+-- fetch number of employees in all departments
+-- SELECT dept, COUNT(emp_id) FROM employees GROUP BY dept;
+
+-- fetch number of employees in all departments in descending order
+-- SELECT DISTINCT dept, COUNT(emp_id) FROM employees GROUP BY dept ORDER BY COUNT DESC;
