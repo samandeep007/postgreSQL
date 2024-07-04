@@ -39,8 +39,31 @@
 -- fetch all the employees from IT and HR department
 -- SELECT * FROM employees WHERE dept='HR' OR dept='IT';
 
+-- fetch employees whose salary is more than 40,000 and less than 65000
+-- SELECT * FROM employees WHERE salary >= 40000 AND salary <= 65000;
 
 
 
+---- IN OPERATOR -- Similar to enums
+
+-- fetch employees who are from Marketing, and Finance 
+-- SELECT * FROM employees WHERE dept IN ('Marketing', 'Finance');
+
+
+
+--- BETWEEN OPERATOR -- Range
+
+-- fetch employees who have salary more than 50000, and less than 60000;
+-- SELECT * FROM employees WHERE salary BETWEEN 50000 AND 60000;
+
+
+-- fetch all the employees who are neither in IT nor in HR
+-- SELECT * FROM employees WHERE dept NOT IN ('IT','HR');
+
+
+--- DISTINCT
+
+-- fetch all the distinct departments in bank (no repetition --> No duplicates);
+-- SELECT DISTINCT dept FROM employees;
 
 
