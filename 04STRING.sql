@@ -38,5 +38,45 @@ STRING_AGG
 -- SELECT REPLACE('hey Saman!', 'hey', 'Hello');
 
 
+-- change IT department to tech department
+-- SELECT *, REPLACE(dept, 'IT', 'TECH') AS dept FROM employees;
+
+
+
+-- REVERSE 
+
+-- Reverse the first name of employees
+-- SELECT REVERSE(fname) FROM employees;
+
+-- LENGTH
+
+-- find the length of each employee's fname;
+-- SELECT fname, LENGTH(fname) FROM employees;
+
+-- list all the employees who have name longer than 5 chars
+-- SELECT fname FROM employees WHERE LENGTH(fname) >= 5;
+
+-- UPPER
+
+--list down the name of all employees in upper case;
+-- SELECT UPPER(CONCAT_WS(' ', fname, lname)) AS FullName FROM employees
+
+-- LOWER
+
+--list down the name of all employees in lower case;
+-- SELECT LOWER(CONCAT_WS(' ', fname, lname)) AS FullName FROM employees
+
+
+-- LEFT --> LEFT se kitne character chahiye
+-- SELECT LEFT('Hello World', 5);
+
+-- RIGHT --> RIGHT se kitne character chahiye
+-- SELECT RIGHT('Hello World', 5);
+
+
+
+
+
+
 
 
