@@ -25,3 +25,12 @@
 -- END AS bonus
 -- FROM employees;
 
+-- TASK
+-- SELECT 
+-- CASE 
+--  WHEN (salary*0.10) > 5500 THEN 'HIGH'
+-- WHEN (salary*0.10) BETWEEN 4800 AND 5500 THEN 'MID'
+-- ELSE 'LOW'
+-- END AS bonus,
+-- COUNT(emp_id) FROM employees GROUP BY bonus; --Always count the primary key
+
