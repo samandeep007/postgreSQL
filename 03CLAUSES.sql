@@ -137,3 +137,6 @@
 
 -- fetch number of employees in all departments in descending order
 -- SELECT DISTINCT dept, COUNT(emp_id) FROM employees GROUP BY dept ORDER BY COUNT DESC;
+
+-- fetch the salary going to each department
+-- SELECT dept, SUM(salary) FROM employees GROUP BY dept ORDER BY SUM DESC;
