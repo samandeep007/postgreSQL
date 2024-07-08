@@ -12,4 +12,7 @@
 --     JOIN products p ON p.p_id = oi.p_id;
 
 -- SELECT p_name, SUM(total_price) FROM billing_details GROUP BY p_name HAVING SUM(total_price)>1500 ORDER BY SUM ASC;
-SELECT p_name, SUM(total_price) FROM billing_details GROUP BY p_name;
+SELECT COALESCE(p_name, 'Total'), SUM(total_price) -- if p_name is null, show total there
+	FROM billing_details 
+	GROUP BY ROLLUP(p_name) -- It will still GROUP BY p_name, you will just have one extra total row
+	ORDER BY SUM ASC;
