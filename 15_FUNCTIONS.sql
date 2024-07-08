@@ -23,3 +23,23 @@
 -- );
 
 
+-- Method 3: Lets create a function bro
+/*
+CREATE OR REPLACE FUNCTION richest_emp_in_dept(department VARCHAR)
+RETURNS TABLE(emp_id INT, fname VARCHAR, salary NUMERIC)
+AS $$
+BEGIN
+RETURN QUERY
+	SELECT e.emp_id, e.fname, e.salary
+	FROM employees e
+	WHERE e.dept= department   
+	AND e.salary = (
+	SELECT MAX(emp.salary)
+	FROM employees emp
+	WHERE emp.dept = department
+);
+END
+$$ LANGUAGE plpgsql
+*/
+
+-- SELECT * FROM richest_emp_in_dept('HR');
